@@ -5,5 +5,7 @@ class IndexController extends Controller {
     public function index(){
         $array =array('apple'=>'eat','train'=>'drive');
         p($array);
+        M('content')->select();
     }
 }
+?>
