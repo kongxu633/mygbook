@@ -1,0 +1,12 @@
+<include file="common:header" />
+
+    <p><a href="{:U('Home/Index/index')}">首页</a></p>
+
+
+    <ul>
+    <foreach name="content" item="v">
+        <li>{$v.content}</li>
+    </foreach>
+    </ul>
+
+<include file="common:footer" />
