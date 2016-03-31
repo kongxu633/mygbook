@@ -9,5 +9,9 @@ return array(
     'DB_PORT'               =>  '3306',        // 端口
     'DB_PREFIX'             =>  'gb_',    // 数据库表前缀
     'DB_CHARSET'            =>  'utf8',      // 数据库编码默认采用utf8
+
+
+    /* URL设置 */
+    'URL_HTML_SUFFIX'       =>  '',  // URL伪静态后缀设置
 );
 ?>

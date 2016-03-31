@@ -1,12 +1,26 @@
 <include file="common:header" />
+<include file="common:nav" />
 
-    <p><a href="{:U('Home/Index/index')}">首页</a></p>
+<div class="weui_panel">
+    <div class="weui_panel_hd">所有信息</div>
+    <div class="weui_panel_bd">
+        <foreach name="content" item="v">
+        <div class="weui_media_box weui_media_text">
 
+            <!-- <p class="weui_media_title extitle">{$v.ctime|date="Y/m/d H:i",###}</p> -->
+            <p class="weui_media_desc exdesc">{$v.content}</p>
+            <ul class="weui_media_info">
+                <li class="weui_media_info_meta">{$v.ctime|timer=###}</li>
+                <li class="weui_media_info_meta">图片1</li>
+                <li class="weui_media_info_meta">图片2</li>
+                <li class="weui_media_info_meta">图片3</li>
 
-    <ul>
-    <foreach name="content" item="v">
-        <li>{$v.content}</li>
-    </foreach>
-    </ul>
+            </ul>
+
+        </div>
+                </foreach>
+    </div>
+</div>
+
 
 <include file="common:footer" />

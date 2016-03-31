@@ -1,0 +1,54 @@
+<include file="common:header" />
+<include file="common:nav" />
+<include file="common:toast" />
+
+    <div class="weui_dialog_alert" id="dialog" style="display: none;">
+        <div class="weui_mask"></div>
+        <div class="weui_dialog">
+            <div class="weui_dialog_hd"><i class="weui_icon_warn weui_icon_msg"></i></div>
+            <div class="weui_dialog_bd">留言内容为空!</div>
+            <div class="weui_dialog_ft">
+                <a href="javascript:$('#dialog').hide();" class="weui_btn_dialog primary">确定</a>
+            </div>
+        </div>
+    </div>
+
+
+    <form id="myform" action="{:U('Home/index/save')}" method="post">
+
+    <div class="weui_cells_title"><b>家纺城公众圈</b>免费为大家发布招聘求职、房屋租售、供求信息、寻人启事等信息。</div>
+    <div class="weui_cells weui_cells_form">
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <textarea id="content" name="content" class="weui_textarea" placeholder="请留言...（尽可能详细，含联系方式）" rows="3"></textarea>
+                <div class="weui_textarea_counter"><span>0</span>/500</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui_cells weui_cells_form">
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <div class="weui_uploader">
+                    <div class="weui_uploader_hd weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">图片上传</div>
+                        <div class="weui_cell_ft"><span>0</span>/5</div>
+                    </div>
+                    <div class="weui_uploader_bd">
+                        <ul class="weui_uploader_files">
+                        </ul>
+                        <div class="weui_uploader_input_wrp">
+                            <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui_btn_area">
+        <input type="submit" class="weui_btn weui_btn_primary" value="确认提交">
+    </div>
+
+    </form>
+
+<include file="common:footer" />
