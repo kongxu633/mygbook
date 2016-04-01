@@ -4,7 +4,7 @@ use Think\Controller;
 class IndexController extends Controller {
     public function index(){
 
-        $content = M('content')->order('ctime DESC')->select();
+        $content = M('content')->where(array("status" => 1))->order('ctime DESC')->select();
 
         $this->assign('content',$content);
         $this->display();
@@ -12,15 +12,13 @@ class IndexController extends Controller {
 
     public function add(){
         $this->display();
-
     }
 
 
     public function save(){
 
-        //p(I('post.'));
-
         $content = I('content');
+        $pics = I('pic');
 
         if(empty($content)){
 
@@ -30,12 +28,21 @@ class IndexController extends Controller {
 
         $data['content'] = I('content');
         $data['ctime'] = time();
+        $gid = M('content')->data($data)->add();
+
+        if($gid === false){
+
+            $this->error('留言保存失败');
+
+        }
 
 
-        if(M('content')->data($data)->add()){
-
-            echo "ok";
-
+        if(!empty($pics)){
+            foreach ($pics as $v) {
+                $arr['name'] = $v;
+                $arr['gid'] = $gid;
+                M('pic')->data($arr)->add();
+            }
         }
 
         $this->display();
@@ -51,8 +58,6 @@ class IndexController extends Controller {
 
         $file = new \Think\Storage\Driver\File;
         $info = $file->put($file_path,$file_string);
-
-        //p($info);
 
         if($info){
             $result['status'] = 1;
