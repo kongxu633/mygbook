@@ -46,6 +46,7 @@ class IndexController extends Controller {
 
         $file_string = I('post.base64_string','','base64_decode');
 
+        $savename = date("Ym").'/'.date("Ymd").'_'.uniqid().'.jpg';//localResizeIMG压缩后的图片都是jpeg格式
         $file_path = './Upload/' . $savename;
 
         $file = new \Think\Storage\Driver\File;
@@ -53,17 +54,16 @@ class IndexController extends Controller {
 
         //p($info);
 
-        $result['status'] = 1;
-        $result['content'] = "上传成功";
-        $result['url'] = $savename;
+        if($info){
+            $result['status'] = 1;
+            $result['content'] = "上传成功";
+            $result['url'] = $savename;
+        } else {
+            $result['status'] = 0;
+            $result['content'] = "上传失败";
+        }
 
         $this->ajaxReturn($result);
-
-    // if($image){
-    //     echo '{"status":1,"content":"上传成功","url":"'.$image.'"}';
-    // }else{
-    //     echo '{"status":0,"content":"上传失败"}';
-    // }
 
     }
 
