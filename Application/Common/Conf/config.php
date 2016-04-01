@@ -13,5 +13,7 @@ return array(
 
     /* URL设置 */
     'URL_HTML_SUFFIX'       =>  '',  // URL伪静态后缀设置
+
+    // 'SHOW_PAGE_TRACE'       =>  true,
 );
 ?>

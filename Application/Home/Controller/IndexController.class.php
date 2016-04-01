@@ -46,13 +46,10 @@ class IndexController extends Controller {
 
         $file_string = I('post.base64_string','','base64_decode');
 
-        $savename = date("Ymd").'_'.uniqid().'.jpeg';//localResizeIMG压缩后的图片都是jpeg格式
-        $savepath = './Upload/'.date("Ym").'/';
-
-        $filename = $savepath . $savename ;
+        $file_path = './Upload/' . $savename;
 
         $file = new \Think\Storage\Driver\File;
-        $info = $file->put($filename,$file_string);
+        $info = $file->put($file_path,$file_string);
 
         //p($info);
 

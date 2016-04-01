@@ -69,12 +69,8 @@ $(document).ready(function() {
                             alert(data.content);
                             return false;
                         } else {
-
-                            var picstr = '<p><a href="../' + data.url + '" target="_blank">' + data.url + '</a><img src="../' + data.url + '" width="200"></p>';
-                            var nowstr = $('#pics').val();
-                            $('#pics').val(nowstr + picstr);
-
-                            var attstr = '<li class="weui_uploader_file" style="background-image:url(' + data.url + ')"></li>';
+                            var attstr = '<li class="weui_uploader_file" style="background-image:url(' + UPLOAD_PATH + data.url + ')"></li>';
+                            //attstr += '<p><a href="' + UPLOAD_PATH + data.url + '" target="_blank">' + UPLOAD_PATH + data.url + '</a><img src="' + UPLOAD_PATH + data.url + '"></p>';
                             $(".weui_uploader_files").append(attstr);
                             return false;
                         }
