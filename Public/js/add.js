@@ -37,7 +37,7 @@ function mysubmit(){
 
 $(document).ready(function() {
 
-    $("#con").on('keyup',function(){
+    $("#content").on('keyup',function(){
         var maxlen = 500;
         var len = $(this).val().length;
         if(len >= maxlen){
@@ -61,7 +61,7 @@ $(document).ready(function() {
                 $.ajax({
 
                     type: "POST",
-                    url: "upload.php",
+                    url: UPLOAD_HANDLE,
                     data: {base64_string: clearBase64},
                     dataType: "json",
                     success: function (data) {

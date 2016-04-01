@@ -40,5 +40,36 @@ class IndexController extends Controller {
 
         $this->display();
     }
+
+
+    public function upload(){
+
+        $file_string = I('post.base64_string','','base64_decode');
+
+        $savename = date("Ymd").'_'.uniqid().'.jpeg';//localResizeIMG压缩后的图片都是jpeg格式
+        $savepath = './Upload/'.date("Ym").'/';
+
+        $filename = $savepath . $savename ;
+
+        $file = new \Think\Storage\Driver\File;
+        $info = $file->put($filename,$file_string);
+
+        //p($info);
+
+        $result['status'] = 1;
+        $result['content'] = "上传成功";
+        $result['url'] = $savename;
+
+        $this->ajaxReturn($result);
+
+    // if($image){
+    //     echo '{"status":1,"content":"上传成功","url":"'.$image.'"}';
+    // }else{
+    //     echo '{"status":0,"content":"上传失败"}';
+    // }
+
+    }
+
+
 }
 ?>

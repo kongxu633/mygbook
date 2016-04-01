@@ -1,6 +1,85 @@
-<include file="common:header" />
-<include file="common:nav" />
-<include file="common:toast" />
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>纺城微中介</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="__PUBLIC__/css/light7/light7.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/weui/weui.min.css">
+
+    <script type="text/javascript">
+        var UPLOAD_HANDLE = "{:U('/Home/Index/upload')}";
+        var UPLOAD_PATH = "__ROOT__/Public/";
+    </script>
+
+  </head>
+  <body>
+    <!--内容开始-->
+
+    <div class="page-group">
+
+        <div id="page-ptr-tabs" class="page">
+            <!-- 标题栏 -->
+
+            <!-- 工具栏 -->
+            <nav class="bar bar-tab">
+                <a class="tab-item external" href="{:U('Home/Index/index')}">
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">首页</span>
+                </a>
+                <a class="tab-item external active" href="{:U('Home/Index/add')}">
+                    <span class="icon icon-message"></span>
+                    <span class="tab-label">发布</span>
+                </a>
+                <a class="tab-item external" href="javascript:location.reload(1);">
+                    <span class="icon icon-refresh"></span>
+                    <span class="tab-label">刷新</span>
+                </a>
+                <a class="tab-item external open-popup" href="javascript:;">
+                    <span class="icon icon-friends"></span>
+                    <span class="tab-label">关于</span>
+                </a>
+            </nav>
+
+            <!-- 这里是页面内容区 -->
+            <div class="content">
+
+    <!--BEGIN toast-->
+    <div id="toast" style="display: none;">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast">
+            <i class="weui_icon_toast"></i>
+            <p class="weui_toast_content">已完成</p>
+        </div>
+    </div>
+    <!--end toast-->
+
+    <!-- loading toast -->
+    <div id="loadingToast" class="weui_loading_toast" style="display:none;">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast">
+            <div class="weui_loading">
+                <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+            </div>
+            <p class="weui_toast_content">正在处理</p>
+        </div>
+    </div>
 
     <div class="weui_dialog_alert" id="dialog" style="display: none;">
         <div class="weui_mask"></div>
@@ -51,4 +130,32 @@
 
     </form>
 
-<include file="common:footer" />
+    <div id="footer" class="weui_cells_title">
+        <p>*注：家纺城公众圈只负责对信息进行转发，不保证信息的准确性、有效性、及时性和完整性。在法律允许的范围内，家纺城公众圈在此声明，不承担任何人就使用或未能使用本平台所提供的信息或任何链接所引致的任何直接、间接、附带、从属、特殊、惩罚性或惩戒性的损害赔偿。</p>
+    </div>
+
+
+            </div><!-- content -->
+
+        </div><!-- page -->
+    </div><!-- page-group -->
+
+    <!-- 关于 -->
+    <div class="popup">
+      <div class="content-block">
+        <p>关于</p>
+        <h4>家纺城公众圈</h4>
+        <p>免费为大家发布招聘求职、房屋租售、供求信息、寻人启事等信息。</p>
+        <p>请自觉遵守国家相关法律法规，文明留言！</p>
+        <p><a href="#" class="close-popup">关闭</a></p>
+      </div>
+    </div>
+    <!--内容结束-->
+    <script type='text/javascript' src='__PUBLIC__/js/lib/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='__PUBLIC__/js/light7/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='__PUBLIC__/js/lrz.all.bundle.js' charset='utf-8'></script>
+    <script type='text/javascript' src='__PUBLIC__/js/add.js' charset='utf-8'></script>
+
+
+</body>
+</html>

@@ -1,26 +1,172 @@
-<include file="common:header" />
-<include file="common:nav" />
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{:time()}纺城微中介</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-<div class="weui_panel">
-    <div class="weui_panel_hd">所有信息</div>
-    <div class="weui_panel_bd">
-        <foreach name="content" item="v">
-        <div class="weui_media_box weui_media_text">
+    <link rel="stylesheet" href="__PUBLIC__/css/light7/light7.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/light7/light7-swiper.min.css">
 
-            <!-- <p class="weui_media_title extitle">{$v.ctime|date="Y/m/d H:i",###}</p> -->
-            <p class="weui_media_desc exdesc">{$v.content}</p>
-            <ul class="weui_media_info">
-                <li class="weui_media_info_meta">{$v.ctime|timer=###}</li>
-                <li class="weui_media_info_meta">图片1</li>
-                <li class="weui_media_info_meta">图片2</li>
-                <li class="weui_media_info_meta">图片3</li>
+    <link rel="stylesheet" href="__PUBLIC__/css/common.css">
 
-            </ul>
+  </head>
+  <body>
+    <!--内容开始-->
+    <div class="page-group">
 
-        </div>
-                </foreach>
+        <div id="page-ptr-tabs" class="page">
+            <!-- 标题栏 -->
+
+            <!-- 工具栏 -->
+            <nav class="bar bar-tab">
+                <a class="tab-item external active" href="{:U('Home/Index/index')}">
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">首页</span>
+                </a>
+                <a class="tab-item external" href="{:U('Home/Index/add')}">
+                    <span class="icon icon-message"></span>
+                    <span class="tab-label">发布</span>
+                </a>
+                <a class="tab-item external" href="javascript:location.reload(1);">
+                    <span class="icon icon-refresh"></span>
+                    <span class="tab-label">刷新</span>
+                </a>
+                <a class="tab-item external open-popup" href="javascript:;">
+                    <span class="icon icon-friends"></span>
+                    <span class="tab-label">关于</span>
+                </a>
+            </nav>
+
+            <!-- 这里是页面内容区 -->
+            <div class="content">
+
+                <!-- 标签页 -->
+                <div class="buttons-tab">
+                  <a href="#tab1" class="tab-link active button">全部</a>
+                  <a href="#tab2" class="tab-link button">加急</a>
+                  <a href="#tab3" class="tab-link button">推荐</a>
+                </div>
+
+                <div class="tabs pull-to-refresh-container">
+
+                    <div id="tab1" class="tab active pull-to-refresh-content infinite-scroll">
+
+                    <div class="pull-to-refresh-layer">
+
+                    </div>
+
+                        <div class="list-block list-container">
+                            <foreach name="content" item="v">
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-header">{$v.content}</div>
+                                <div class="card-content">
+                                  <div class="list-block media-list">
+                                    <ul>
+                                    <foreach name="pic" item="p">
+                                      <li class="item-content">
+                                        <div class="item-media pb-standalone">
+                                            <img src="{$p.url}">
+                                        </div>
+                                      </li>
+                                    </foreach>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="card-footer">
+                                  <span>{$v.ctime|timer=###}</span>
+                                </div>
+                            </div><!-- card -->
+                            </foreach>
+                        </div>
+                        <div class="infinite-scroll-preloader">
+                          <div class="preloader">
+                          </div>
+                        </div>
+                    </div>
+
+                    <div id="tab2" class="tab pull-to-refresh-content infinite-scroll">
+                        <div class="list-block list-container">
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                          <p>This is tab 2 content</p>
+                        </div>
+                        <div class="infinite-scroll-preloader">
+                          <div class="preloader">
+                          </div>
+                        </div>
+                    </div>
+
+                    <div id="tab3" class="tab pull-to-refresh-content infinite-scroll">
+                        <div class="list-block list-container">
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                          <p>This is tab 3 content</p>
+                        </div>
+                        <div class="infinite-scroll-preloader">
+                          <div class="preloader">
+                          </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div><!-- content -->
+
+        </div><!-- page -->
+    </div><!-- page-group -->
+
+
+    <!-- 关于 -->
+    <div class="popup">
+      <div class="content-block">
+        <p>关于</p>
+        <h4>家纺城公众圈</h4>
+        <p>免费为大家发布招聘求职、房屋租售、供求信息、寻人启事等信息。</p>
+        <p>请自觉遵守国家相关法律法规，文明留言！</p>
+        <p><a href="#" class="close-popup">关闭</a></p>
+      </div>
     </div>
-</div>
+    <!--内容结束-->
+    <script type='text/javascript' src='__PUBLIC__/js/lib/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='__PUBLIC__/js/light7/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='__PUBLIC__/js/light7/light7-swiper.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='__PUBLIC__/js/index.js' charset='utf-8'></script>
+  </body>
+</html>
 
-
-<include file="common:footer" />
