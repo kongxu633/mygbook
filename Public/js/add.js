@@ -72,6 +72,10 @@ $(document).ready(function() {
                             var attstr = '<li class="weui_uploader_file" style="background-image:url(' + UPLOAD_PATH + data.url + ')"></li>';
                             //attstr += '<p><a href="' + UPLOAD_PATH + data.url + '" target="_blank">' + UPLOAD_PATH + data.url + '</a><img src="' + UPLOAD_PATH + data.url + '"></p>';
                             $(".weui_uploader_files").append(attstr);
+
+                            var picstr = '<input name="pic[]" value="' + data.url + '">';
+                            $("#pics").append(picstr);
+
                             return false;
                         }
                     },
